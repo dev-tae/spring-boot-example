@@ -20,8 +20,8 @@ public class PersonService {
         return personRepository.findAll();
     }
 
-    public Optional<Person> getPersonById(UUID id) {
-        return personRepository.findById(id);
+    public Person getPersonById(UUID id) {
+        return personRepository.findById(id).orElseThrow(() -> new PersonNotFoundException("Person not found with id " + id));
     }
 
     public Person addNewPerson(Person person) {
@@ -41,6 +41,10 @@ public class PersonService {
     }
 
     public void deletePerson(UUID id) {
-        personRepository.deleteById(id);
+        if (personRepository.findById(id).isPresent()) {
+            personRepository.deleteById(id);
+        } else {
+            throw new PersonNotFoundException("Person not found with id " + id);
+        }
     }
 }

@@ -13,7 +13,6 @@ public class Person {
     private String email;
     private int age;
 
-
     // Getters and Setters
     public void setName(String name) {
         this.name = name;
@@ -24,7 +23,7 @@ public class Person {
     }
 
     public void setEmail(String email) {
-        this.name = name;
+        this.email = email;
     }
 
     public String getEmail() {
