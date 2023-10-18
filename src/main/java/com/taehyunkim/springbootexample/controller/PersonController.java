@@ -1,35 +1,42 @@
-package com.example.controller;
+package com.taehyunkim.springbootexample.controller;
 
-import com.example.model.Person;
-import com.example.service.PersonService;
+import com.taehyunkim.springbootexample.model.Person;
+import com.taehyunkim.springbootexample.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController
+@RequestMapping("/api/person")
 public class PersonController {
+
     @Autowired
     private PersonService personService;
 
-    // mapping methods here
-    @GetMapping("/persons")
+    @GetMapping
     public List<Person> getAllPersons() {
         return personService.getAllPersons();
     }
 
-    @GetMapping("/persons/{id}")
+    @GetMapping("/{id}")
     public Person getPersonById(@PathVariable UUID id) {
         return personService.getPersonById(id);
     }
 
-    @PostMapping("/persons")
+    @PostMapping
     public Person addNewPerson(@RequestBody Person person) {
         return personService.addNewPerson(person);
     }
 
-    // ... add PUT and DELETE endpoints
+    @PostMapping("/{id}")
+    public Person updatePerson(@PathVariable UUID id, @RequestBody Person personDetails) {
+        return personService.updatePerson(id, personDetails);
+    }
 
+    @DeleteMapping("/{id}")
+    public void deletePerson(@PathVariable UUID id) {
+        personService.deletePerson(id);
+    }
 }

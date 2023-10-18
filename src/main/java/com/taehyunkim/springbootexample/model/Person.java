@@ -1,4 +1,4 @@
-package com.example.model;
+package com.taehyunkim.springbootexample.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

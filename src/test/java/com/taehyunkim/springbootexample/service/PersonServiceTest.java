@@ -1,8 +1,8 @@
-package com.example.service;
+package com.taehyunkim.springbootexample.service;
 
-import com.example.exception.PersonNotFoundException;
-import com.example.model.Person;
-import com.example.repository.PersonRepository;
+import com.taehyunkim.springbootexample.exception.PersonNotFoundException;
+import com.taehyunkim.springbootexample.model.Person;
+import com.taehyunkim.springbootexample.repository.PersonRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
