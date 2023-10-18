@@ -11,8 +11,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -21,6 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
 @Sql(scripts = {"classpath:clear-db.sql", "classpath:test-data.sql"})
+
 public class PersonControllerTest {
 
     @Autowired
@@ -33,6 +32,7 @@ public class PersonControllerTest {
     }
     @Test
     public void getPersonById() throws Exception {
+
         mockMvc.perform(get("/api/person/{id}", "f1fb5a7e-ee84-4bcf-9593-b670a5a5ef72"))
                 .andExpect(status().isOk());
     }

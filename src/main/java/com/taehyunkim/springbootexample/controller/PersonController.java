@@ -1,12 +1,11 @@
-package com.example.controller;
+package com.taehyunkim.springbootexample.controller;
 
-import com.example.model.Person;
-import com.example.service.PersonService;
+import com.taehyunkim.springbootexample.model.Person;
+import com.taehyunkim.springbootexample.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController

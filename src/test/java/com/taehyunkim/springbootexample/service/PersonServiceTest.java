@@ -2,6 +2,7 @@ package com.taehyunkim.springbootexample.service;
 
 import com.taehyunkim.springbootexample.exception.PersonNotFoundException;
 import com.taehyunkim.springbootexample.model.Person;
+
 import com.taehyunkim.springbootexample.repository.PersonRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
